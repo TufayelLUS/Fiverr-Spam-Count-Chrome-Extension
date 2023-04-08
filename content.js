@@ -12,5 +12,5 @@ fetch("https://www.fiverr.com/inbox/counters")
     dashboard.innerHTML = dashboard.innerHTML + ' &nbsp;<span style="color:red">(' + spam_count + ' spam)</span>';
   })
   .catch((error) => {
-    console.error(error);
+    // console.error(error);
   });
