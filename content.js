@@ -1,3 +1,8 @@
+// blur user balance using data-testid="user-balance"
+var userBalance = document.querySelector('[data-testid="user-balance"]');
+if (userBalance) {
+  userBalance.style.filter = 'blur(5px)';
+}
 fetch("https://www.fiverr.com/inbox/counters")
   .then((response) => {
     if (!response.ok) {
@@ -9,12 +14,11 @@ fetch("https://www.fiverr.com/inbox/counters")
     var stat = JSON.parse(data);
     var spam_count = stat.spam;
     var unread_count = stat.unread;
-    var dashboard = document.querySelector('.seller-main-item');
     var title = document.querySelector('title');
-    dashboard.innerHTML = dashboard.innerHTML + ' &nbsp;<span style="color:red">(' + spam_count + ' spam)</span>';
-    if (unread_count > 0){
-      title.innerHTML = title.innerHTML + ' &nbsp;[' + unread_count + ' messages]';
+    if (unread_count > 0 || spam_count > 0){
+      title.innerHTML = title.innerHTML + ' &nbsp;[' + unread_count + ' IB | ' + spam_count + ' SP]';
     }
+    
   })
   .catch((error) => {
     // console.log(error);
