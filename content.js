@@ -1,5 +1,5 @@
 // blur user balance using data-testid="user-balance"
-var userBalance = document.querySelector('[data-testid="user-balance"]');
+var userBalance = document.querySelector('.user-balance');
 if (userBalance) {
   userBalance.style.filter = 'blur(5px)';
 }
